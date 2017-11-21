@@ -3,7 +3,7 @@
 <html>
 	<head>
 		<title>Form Submission</title>
-		<link rel="stylesheet" href="index.css">
+		<link rel="stylesheet" href="style.css">
 	</head>
 <body>
 <h2>Form Submission</h2>

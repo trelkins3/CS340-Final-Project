@@ -1,12 +1,42 @@
 body {
 	background-color: #f1f1f1;
-	text-align: center;
-	margin: 10% 30% 0% 30%;
+	margin: 0;
+	font-family: 'Roboto', sans-serif;
 }
 
-form {
+main {
+	text-align: center;
+	margin: 7% 35% 0% 35%;
+}
+
+header {
+	color: white;
+	font-size: 60px;
+	font-weight: bolder;
+	text-align: center;
+	background-color: #52a5e6;
 	padding: 20px 0 20px 0;
+}
+
+.form-container {
+	text-align: center;
+	padding: 20px;
 	background-color: #ffffff;
 	border-radius: 10px;
 	box-shadow: 0px 0px 5px #929292;
+	margin: 0;
 }
+
+/*.field {
+	margin: 0;
+	padding: 0;
+}
+
+label {
+	align-self: left;
+
+}
+
+input {
+	float: right;
+}*/
