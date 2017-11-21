@@ -16,14 +16,17 @@
 
         <div class="form-container">
             <form action="submitCredentials.php" method="post">
-                <p class="field">
-                    <label for="userName">Username:</label>
-                    <input type="text" name="userName" id="userName">
-                </p>
-                <p class="field">
-                    <label for="password">Password: </label>
-                    <input type="password" name="password" id="password">
-                </p>
+                <table>
+                    <tr>
+                        <td class="table-desc"><label for="userName">Username:</label></td>
+                        <td><input type="text" name="userName" id="userName"></td>
+                    </tr>
+                    <tr>
+                        <td class="table-desc"><label for="password">Password: </label></td>
+                        <td><input type="password" name="password" id="password"></td>
+                    </tr>
+                </table>
+
                 <input type="submit" value="Login">
 
             </form>

@@ -6,7 +6,7 @@ body {
 
 main {
 	text-align: center;
-	margin: 7% 35% 0% 35%;
+	margin: 7% 40% 0% 40%;
 }
 
 header {
@@ -20,23 +20,22 @@ header {
 
 .form-container {
 	text-align: center;
-	padding: 20px;
+	padding: 20px 50px 20px 50px;
 	background-color: #ffffff;
 	border-radius: 10px;
 	box-shadow: 0px 0px 5px #929292;
 	margin: 0;
+	min-width: 380px;
 }
 
-/*.field {
-	margin: 0;
-	padding: 0;
+table {
+	padding-left: 20px;
+	width: 100%;
+	text-align: left;
+	padding: 5px 0 15px 0;
 }
 
-label {
-	align-self: left;
-
+.table-desc {
+	width: 35%;
+	text-align: right;
 }
-
-input {
-	float: right;
-}*/
