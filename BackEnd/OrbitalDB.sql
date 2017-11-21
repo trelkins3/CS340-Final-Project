@@ -1,7 +1,7 @@
 CREATE TABLE DBUsers
 (Username			VARCHAR(20)		NOT NULL UNIQUE,
- Pass				VARCHAR(20)		NOT NULL,
- PassSalt			VARCHAR(20),	NOT NULL,
+ Pass				VARCHAR(32)		NOT NULL,
+ salt			VARCHAR(20)	NOT NULL,
  Name				VARCHAR(20),
  Email				VARCHAR(40)		NOT NULL,
  PRIMARY KEY(Username)
