@@ -2,8 +2,9 @@
 <html>
 	<head>
 		<title>Log in Status</title>
-		<link rel="stylesheet" href="index.css">
+		<link rel="stylesheet" href="style.css">
 	</head>
+
 <body>
 <h2>Log in Status</h2>
 <?php
