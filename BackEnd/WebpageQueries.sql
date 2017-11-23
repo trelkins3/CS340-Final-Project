@@ -10,7 +10,7 @@ SELECT * FROM Users WHERE Username = '$Username' AND Pass = '$Password';
 --Account Page. No user input. Username taken from stored credentials during login
 SELECT satID FROM Favorites WHERE Username = '$Username';
 
---Object Database page. No user input
+--Object Database page. Need to implement category selections?
 --Satellite
 SELECT * FROM Satellite;
 --Rocket

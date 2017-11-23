@@ -1,4 +1,4 @@
--- Create new user 
+-- THIS DOES NOT WORK
 INSERT INTO DBUsers Values ('ruarka', '1234password', 'Adam Ruark', 'ruarka@oregonstate.edu' );
 
 -- A person changes their favorite satellite

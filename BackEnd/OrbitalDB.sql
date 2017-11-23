@@ -1,8 +1,8 @@
 CREATE TABLE DBUsers
 (Username			VARCHAR(20)		NOT NULL UNIQUE,
  Pass				VARCHAR(32)		NOT NULL,
- salt			VARCHAR(20)	NOT NULL,
- Name				VARCHAR(20),
+ salt				VARCHAR(20)		NOT NULL,
+ Name				VARCHAR(20)		DEFAULT NULL,
  Email				VARCHAR(40)		NOT NULL,
  PRIMARY KEY(Username)
 );
@@ -27,7 +27,7 @@ CREATE TABLE Satellite
 (satID				VARCHAR(20)		NOT NULL UNIQUE,	-- Used to fetch Purpose
  ownerID			VARCHAR(20)		NOT NULL,
  launchID			INT				NOT NULL,
- orbitalPeriod		DECIMAL(2,1)	DEFAULT NULL,
+ orbitalPeriod		DECIMAL(5,2)	DEFAULT NULL,
  daysInOrbit		INT				DEFAULT NULL, -- Derived from Launch Date
  PRIMARY KEY(satID),
  FOREIGN KEY(ownerID) REFERENCES Owner(ownerID),
@@ -36,8 +36,8 @@ CREATE TABLE Satellite
  ON DELETE CASCADE
 );
 
--- Must be fetched via SELECT queries
--- Need a trigger to update
+-- Must be fetched via SELECT queries/PHP
+-- Need a trigger to update?? Or is it already implemented
 CREATE TABLE Purpose
 (satID				VARCHAR(20)		NOT NULL UNIQUE,
  purpose1			VARCHAR(20)		DEFAULT NULL,
