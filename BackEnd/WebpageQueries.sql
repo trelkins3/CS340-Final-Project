@@ -19,7 +19,7 @@ SELECT * FROM Rocket;
 SELECT * FROM Owner;
 
 --Object Page. User input based on what object they clicked to get here
-SELECT S.satID, orbitalPeriod, daysInOrbit, 
+SELECT S.satID, orbitalPeriod, 
 	R.launchID, launchDate, launchSite, 
 	O.ownerID, ownerType, Location, Country,
 	P.satID, purpose1, purpose2, purpose3

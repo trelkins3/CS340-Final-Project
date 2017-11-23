@@ -28,7 +28,6 @@ CREATE TABLE Satellite
  ownerID			VARCHAR(20)		NOT NULL,
  launchID			INT				NOT NULL,
  orbitalPeriod		DECIMAL(5,2)	DEFAULT NULL,
- daysInOrbit		INT				DEFAULT NULL, -- Derived from Launch Date
  PRIMARY KEY(satID),
  FOREIGN KEY(ownerID) REFERENCES Owner(ownerID),
  FOREIGN KEY(launchID) REFERENCES Rocket(launchID)
