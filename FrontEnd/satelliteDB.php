@@ -7,6 +7,11 @@
 	</head>
 
     <body>
+	
+	<header>
+        SatelliteDB
+    </header>
+	
 	<?php
 		include 'connectvarsEECS.php'; 
 	
@@ -24,7 +29,7 @@
 		
 		// get number of columns in table	
 		$fields_num = (mysqli_num_fields($result));
-		echo "<h1>Satellites: $table </h1>";
+		echo "<h1>$table </h1>";
 		echo "<table id='t01' border='1'><tr>";
 		
 		for($i=0; $i<$fields_num; $i++) {	
@@ -50,9 +55,6 @@
 		echo "</tr>\n";
 		}
 	?>
-    <header>
-        SatelliteDB
-    </header>
 
     <main>
     </main>
