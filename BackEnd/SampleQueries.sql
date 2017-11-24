@@ -9,7 +9,7 @@ UPDATE Favorites SET satID='New Sat' WHERE Username='satResearcher1';
 SELECT Username FROM Favorites WHERE satID='CubeSat001';
 
 --List every detail about a satellite
-SELECT S.satID, ownerID, launchID, orbitalPeriod, daysInOrbit, purpose1, purspose2, purpose3
+SELECT S.satID, COSPAR, ownerID, launchID, orbitalPeriod, purpose1, purspose2, purpose3
 FROM Satellite S, Purpose P
 WHERE S.satID=P.satID;
 

@@ -10,7 +10,7 @@ INSERT INTO Owner VALUES
 ('SpaceX', 'Commercial', 'Florida', 'United States');
 
 -- This will fail if there's no 'Rocket' object with ID 1
-INSERT INTO Satellite (satID, ownerID, launchID) VALUES ('CubeSat001', 'SpaceX', '1');
+INSERT INTO Satellite (satID, COSPAR, ownerID, launchID) VALUES ('CubeSat001', '2007-01A', 'SpaceX', '1');
 
 -- This won't work based on above broken statement, but the format will work
 INSERT INTO Favorites VALUES

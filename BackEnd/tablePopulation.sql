@@ -12,7 +12,7 @@ INSERT INTO `Owner` (`ownerID`, `ownerType`, `Location`, `Country`) VALUES
 ('SpaceX', 'Commercial', 'California', 'United States');
 
 -- Satellite
-INSERT INTO `Satellite` VALUES ('USA-66', 'NASA', 2, '11.96');
+INSERT INTO `Satellite` VALUES ('USA-66', '1990-103A', 'NASA', 2, '11.96');
 
 -- Purpose
 -- None yet

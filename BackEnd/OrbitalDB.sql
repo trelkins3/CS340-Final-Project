@@ -25,6 +25,7 @@ CREATE TABLE Owner
 
 CREATE TABLE Satellite
 (satID				VARCHAR(20)		NOT NULL UNIQUE,	-- Used to fetch Purpose
+ COSPAR				VARCHAR(20)		NOT NULL UNIQUE,
  ownerID			VARCHAR(20)		NOT NULL,
  launchID			INT				NOT NULL,
  orbitalPeriod		DECIMAL(5,2)	DEFAULT NULL,

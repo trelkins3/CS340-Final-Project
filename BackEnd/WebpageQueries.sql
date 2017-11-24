@@ -19,7 +19,7 @@ SELECT * FROM Rocket;
 SELECT * FROM Owner;
 
 --Object Page. User input based on what object they clicked to get here
-SELECT S.satID, orbitalPeriod, 
+SELECT S.satID, COSPAR, orbitalPeriod, 
 	R.launchID, launchDate, launchSite, 
 	O.ownerID, ownerType, Location, Country,
 	P.satID, purpose1, purpose2, purpose3
@@ -28,6 +28,6 @@ WHERE S.satID='$userInput' AND S.satID=P.satID AND S.ownerID=O.ownerID AND S.lau
 
 --Add object. Requires user input
 --If owner already exists, then we won't need to insert a new owner. Check this with php.
-INSERT INTO Satellite VALUES '$satID', '$ownerID', '$launchID', '$orbitalPeriod';
+INSERT INTO Satellite VALUES '$satID', '$COSPAR', '$ownerID', '$launchID', '$orbitalPeriod';
 INSERT INTO Purpose VALUES '$satID', '$purpose1', '$purpose2', '$purpose3';
 INSERT INTO Owner VALUES '$ownerID', '$ownerType', '$Location', '$Country';
