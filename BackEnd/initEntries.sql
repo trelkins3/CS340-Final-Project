@@ -14,7 +14,7 @@ INSERT INTO Satellite (satID, COSPAR, ownerID, launchID) VALUES ('CubeSat001', '
 
 -- This won't work based on above broken statement, but the format will work
 INSERT INTO Favorites VALUES
-('satResearcher1', 'CubeSat001');
+('testuser', 'CubeSat001');
 
 -- Removed 'Launches' table from DB
 DROP TABLE Favorites, Purpose, Satellite, Owner, Rocket, DBUsers;
