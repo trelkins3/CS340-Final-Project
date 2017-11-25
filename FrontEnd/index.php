@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Add Object</title>
+		<title>Home</title>
 		<link rel="stylesheet" href="style.css">
-        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
 	</head>
 
     <body>
-    <header>
+	
+	<header>
         <h1><a>SatelliteDB   </a></h1>
 		<nav>
 			<ul class="navbar-list">
@@ -19,8 +20,8 @@
 			</ul>
 		</nav>
     </header>
-
-    <main>
+	
+	    <main>
     </main>
 	
     </body>
