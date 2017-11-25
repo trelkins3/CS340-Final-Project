@@ -39,3 +39,23 @@ table {
 	width: 35%;
 	text-align: right;
 }
+
+.t01{
+	border: 1px solid black;
+	border-collapse: collapse;
+	text-align: center;
+	background-color: #e0dede;
+	width: 50%;
+	margin: auto;
+}
+
+.t01 th {
+	text-decoration: underline;
+	border: none;
+}
+
+.t01 td {
+	border: 1px solid black;
+	border-right: none;
+	border-left: none;
+}

@@ -20,7 +20,9 @@
 			die('Could not connect: ' . mysql_error());
 		}
 		
-		$query = "SELECT * FROM Satellite";
+		$query = 'SELECT satID as "Satellite Name", COSPAR as "COSPAR ID",
+				  ownerID as "Launch Entity", launchID, orbitalPeriod
+				  as "Orbital Period (Hrs)" FROM `Satellite`';
 
 		$result = mysqli_query($conn, $query);
 		if (!$result) {
@@ -30,11 +32,11 @@
 		// get number of columns in table	
 		$fields_num = (mysqli_num_fields($result));
 		echo "<h1>$table </h1>";
-		echo "<table id='t01' border='1'><tr>";
+		echo '<table class="t01"><tr>';
 		
 		for($i=0; $i<$fields_num; $i++) {	
 			$field = mysqli_fetch_field($result);
-			echo "<td><b>$field->name</b></td>";
+			echo "<th><b>$field->name</b></th>";
 		}
 		
 		echo "</tr>\n";
@@ -54,6 +56,8 @@
 		}
 		echo "</tr>\n";
 		}
+		
+		echo '</table>';
 	?>
 
     <main>

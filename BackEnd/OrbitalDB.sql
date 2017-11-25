@@ -16,7 +16,7 @@ CREATE TABLE Rocket
 );
 
 CREATE TABLE Owner
-(ownerID			VARCHAR(20)							NOT NULL UNIQUE,
+(ownerID			VARCHAR(25)							NOT NULL UNIQUE,
  ownerType			ENUM('Commercial', 'Government')	NOT NULL,
  Location			VARCHAR(20)							DEFAULT NULL,
  Country			VARCHAR(20)							NOT NULL,
