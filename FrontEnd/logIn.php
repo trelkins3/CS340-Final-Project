@@ -15,7 +15,6 @@
 				<li class="navbar-item"><a href="logIn.php">Account</a></li>
 				<li class="navbar-item"><a href="satelliteDB.php">Satellite Database</a></li>
 				<li class="navbar-item"><a href="addObject.php">Add Satellite</a></li>
-				<li class="navbar-item"><a href="about.php">About</a></li>
 			</ul>
 		</nav>
     </header>
@@ -41,7 +40,7 @@
             </form>
         </div>
 
-        <p>Don't have an account? <a href="http://web.engr.oregonstate.edu/~ruarka/cs340/Project/signUp.php">Sign up!</a></p>
+        <p>Don't have an account? <a href="http://web.engr.oregonstate.edu/~elkinsd/CS340/SatelliteDB/signUp.php">Sign up!</a></p>
     </main>
     </body>
 </html>
