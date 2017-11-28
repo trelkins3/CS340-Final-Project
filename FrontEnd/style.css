@@ -57,6 +57,10 @@ nav {
   background-color: #444;
 }
 
+.navbar-right {
+	 float: right;
+}
+
 .form-container {
 	text-align: center;
 	padding: 20px 50px 20px 50px;
