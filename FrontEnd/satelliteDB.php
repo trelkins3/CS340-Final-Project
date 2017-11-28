@@ -18,7 +18,6 @@ session_start();
 		<nav>
             <ul class="navbar-list">
                 <li class="navbar-item"><a href="index.php">Home</a></li>
-                
                 <li class="navbar-item"><a href="satelliteDB.php">Satellite Database</a></li>
                 <li class="navbar-item"><a href="addObject.php">Add Satellite</a></li>
                 <?php

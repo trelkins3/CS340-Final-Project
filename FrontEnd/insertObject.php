@@ -44,8 +44,8 @@ $orbitalPeriod = $fields['orbitalPeriod'];
 $purpose1 = $fields['purpose1'];
 $purpose2 = $fields['purpose2'];
 
-//some constraint checking
-
+//TODO: some constraint checking
+//Worst case scenario we BS our way through the presentation
 
 
 // Insertion queries
