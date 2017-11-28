@@ -19,7 +19,6 @@ session_start();
                 
                 <li class="navbar-item"><a href="satelliteDB.php">Satellite Database</a></li>
                 <li class="navbar-item"><a href="addObject.php">Add Satellite</a></li>
-                <li class="navbar-item"><a href="about.php">About</a></li>
                 <?php
                     if(isset($_SESSION['status'])){
                         echo "<li class=\"navbar-item\"><a href=\"favorites.php\">Favorites</a></li>";
@@ -27,6 +26,7 @@ session_start();
                     }
                     else {
                         echo "<li class=\"navbar-item navbar-right\"><a href=\"logIn.php\">Log In</a></li>";
+                        echo "<li class=\"navbar-item navbar-right\"><a href=\"signUp.php\">Sign Up</a></li>";
                     }
                 ?>
             </ul>
