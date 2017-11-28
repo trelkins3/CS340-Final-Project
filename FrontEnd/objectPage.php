@@ -1,4 +1,4 @@
-<?php
+ <?php
 session_start();
 ?>
 
@@ -36,58 +36,42 @@ session_start();
 	
 	<?php
 		include 'connectvarsEECS.php'; 
+		
+		$objectName = $_GET['param'];
 	
 		$conn = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 		if (!$conn) {
 			die('Could not connect: ' . mysql_error());
 		}
 		
-		$query = 'SELECT satID as "Satellite Name", COSPAR as "COSPAR ID",
-				  ownerID as "Launch Entity" FROM `Satellite`';
-
-		$result = mysqli_query($conn, $query);
-		if (!$result) {
-			die("Query to show fields from table failed");
-		}
+		$satQuery = "SELECT satID, COSPAR, ownerID, orbitalPeriod FROM Satellite
+					 WHERE satID='$objectName'";
+		$launchQuery = "SELECT launchDate, launchSite FROM Rocket WHERE launchID=
+						(SELECT launchID FROM Satellite WHERE satID='$objectName')";
+		$purposeQuery = "SELECT purpose1, purpose2 FROM Purpose WHERE
+						 satID='$objectName'";
 		
-		// get number of columns in table	
-		$fields_num = (mysqli_num_fields($result));
-		echo "<h1>$table</h1>";
-		echo '<table class="t01"><tr>';
+		$satResult = mysqli_query($conn, $satQuery);
+		if(!satResult){ die("Query to fetch satellite failed."); }
 		
-		for($i=0; $i<$fields_num; $i++) {	
-			$field = mysqli_fetch_field($result);
-			echo "<th><b>$field->name</b></th>";
-		}
+		$launchResult = mysqli_query($conn, $launchQuery);
+		if(!launchResult){ die("Query to fetch launch failed."); }
 		
-		echo "</tr>\n";
-		while($row = mysqli_fetch_row($result)) {
-			$parameter = $row[0];
-			echo "<tr class='not-first'>";	
+		$purposeResult = mysqli_query($conn, $purposeQuery);
+		if(!purposeResult){ die("Query to fetch purposes failed."); }
 		
-			// $row is array... foreach( .. ) puts every element
-			// of $row to $cell variable	
+		$satRow = mysqli_fetch_row($satResult);
+		$launchRow = mysqli_fetch_row($launchResult);
+		$purposeRow = mysqli_fetch_row($purposeResult);
 		
-			$count = count($row);	
+		//echo "$objectName";		
+		echo "<br>Satellite Name: $satRow[0]<br><br>";
+		echo "COSPAR ID Number: $satRow[1]<br><br>";
+		echo "Launch Owner: $satRow[2]<br><br>";
+		echo "Launch Date: $launchRow[0]<br><br>";
+		echo "Launch Site: $launchRow[1]<br><br>";
+		echo "Orbital Period: $satRow[3] Hours<br><br>";
+		echo "Purposes: $purposeRow[0] $purposeRow[1] <br>";
 		
-			foreach($row as $cell){
-				if($count == 0)
-					break;
-				if($cell == $row[0])
-					echo "<td><a href=\"objectPage.php?param=$parameter\">$cell</a></td>";	
-				else
-					echo "<td>$cell</td>";
-				$count--;
-		}
-		echo "</tr>\n";
-		}
-		
-		echo '</table>';
+		// Photo code goes here?
 	?>
-
-    <main>
-
-    </main>
-	
-    </body>
-</html>
