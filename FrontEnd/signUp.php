@@ -17,6 +17,7 @@ session_start();
     ?>
 
     <main>
+        <div class="form-background">
         <h2>Sign Up</h2>
 
         <div class="form-container">
@@ -52,6 +53,7 @@ session_start();
             </form>
 
         </div>
+    </div>
     </main>
 </body>
 </html>

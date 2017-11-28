@@ -16,6 +16,8 @@ session_start();
     ?>
 
     <main>
+        <div class="form-background">
+
         <h2>Log In</h2>
 
         <div class="form-container">
@@ -46,6 +48,7 @@ session_start();
         </div>
 
         <p>Don't have an account? <a href="signUp.php">Sign up!</a></p>
+    </div>
     </main>
     </body>
 </html>

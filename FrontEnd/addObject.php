@@ -16,7 +16,8 @@ session_start();
     ?>
 
     <main>
-		<h2>Add Object</h2>
+        <div class="form-background">
+		<h2>Add Satellite</h2>
 
 		<!-- A lot of these need to be modified to be dropdown menus -->
 		<div class="form-container">
@@ -101,6 +102,7 @@ session_start();
 
 				</form>
         </div>
+    </div>
     </main>
 	
     </body>

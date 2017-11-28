@@ -39,18 +39,12 @@ session_start();
 			Enjoy!</p>
 		</div>
 
-		
-		<?php
-			if(isset($_SESSION['status'])){
-				echo "<b>You are logged in as ". $_SESSION['username'] . ".</b>";
-			}
-			else {
-				echo "<b>You are not logged in.</b>";
-			}
-		?>
 		<br><br><br>
-		<script src="https://www.reddit.com/r/space/.embed?limit=5&t=all" type="text/javascript">
-		</script>
+		<div class="col-right">
+			<script src="https://www.reddit.com/r/space/.embed?limit=5&t=all" type="text/javascript">
+			</script>
+		</div>
+		
     </main>
 	
     </body>

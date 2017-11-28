@@ -9,10 +9,8 @@ a {
 }
 
 main {
-	text-align: center;
-	margin: 7% 40% 0% 40%;
+	margin: 5%;
 }
-
 
 header {
 	color: white;
@@ -62,6 +60,11 @@ nav {
   float: right;
 }
 
+.form-background {
+	text-align: center;
+	margin: 7% 35% 0% 35%;
+}
+
 .form-container {
 	text-align: center;
 	padding: 20px 50px 20px 50px;
@@ -109,4 +112,18 @@ table {
 
 .error-msg {
 	color: red;
+}
+
+.col-right {
+	display: inline-block;
+	float: right;
+	text-align: left;
+	width: 20%;
+}
+
+.col-left {
+	text-align: left;
+	display: inline-block;
+	float: left;
+	width: 40%;
 }
