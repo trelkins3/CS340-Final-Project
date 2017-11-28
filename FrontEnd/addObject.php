@@ -39,6 +39,14 @@ session_start();
 		<!-- A lot of these need to be modified to be dropdown menus -->
 		<div class="form-container">
             <form action="insertObject.php" method="post">
+            	<p class="error-msg">
+                    <?php
+                        if(isset($_SESSION['errMsg'])){
+                            echo $_SESSION['errMsg'];
+                        }
+                    ?>
+                </p>
+                <?php unset($_SESSION['errMsg']); ?>
                 <table>
                     <tr>
                         <td><label for="satID">Satellite Name/ID:</label></td>
