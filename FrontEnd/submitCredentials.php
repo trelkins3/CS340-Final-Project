@@ -34,8 +34,8 @@ session_start();
 
 
 
-	<h2>Login Status</h2
->	<?php
+	<h2>Login Status</h2>	
+	<?php
 		include 'connectvarsEECS.php'; 
 		
 		$conn = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
@@ -63,7 +63,7 @@ session_start();
 			$_SESSION['status'] = 'in';
 			$_SESSION['username'] = $userName;
 
-			header("Location: index.php");
+			echo "<script>window.location.replace(\"index.php\")</script>";
 			exit();
 		}
 		else{

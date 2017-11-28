@@ -11,14 +11,24 @@ session_start();
 	</head>
 
     <body>
-    <header>
-        <h1><a>SatelliteDB   </a></h1>
+   <header>
+        <h1><a>SatelliteDB</a></h1>
 		<nav>
 			<ul class="navbar-list">
 				<li class="navbar-item"><a href="index.php">Home</a></li>
-				<li class="navbar-item"><a href="logIn.php">Account</a></li>
+				
 				<li class="navbar-item"><a href="satelliteDB.php">Satellite Database</a></li>
 				<li class="navbar-item"><a href="addObject.php">Add Satellite</a></li>
+				<li class="navbar-item"><a href="about.php">About</a></li>
+				<?php
+					if(isset($_SESSION['status'])){
+						echo "<li class=\"navbar-item\"><a href=\"favorites.php\">Favorites</a></li>";
+						echo "<li class=\"navbar-item navbar-right\"><a href=\"logOut.php\">Log Out</a></li>";
+					}
+					else {
+						echo "<li class=\"navbar-item navbar-right\"><a href=\"logIn.php\">Log In</a></li>";
+					}
+				?>
 			</ul>
 		</nav>
     </header>
@@ -78,21 +88,22 @@ session_start();
 					<tr>
                         <td><label for="purpose1">Purpose 1:</label></td>
                        <td><select name="purpose1" id="purpose1">
+					   <option value="">None</option>
 					   <option value="Communications">Communications</option>
 					   <option value="GPS">GPS</option>
 					   <option value="Military">Military</option>
 					   <option value="Research">Research</option>
-					   <option value="">None</option>
+					   
 					   </select></td>
                     </tr>
 					<tr>
                         <td><label for="purpose2">Purpose 2:</label></td>
                        <td><select name="purpose2" id="purpose2">
+					   <option value="">None</option>
 					   <option value="Communications">Communications</option>
 					   <option value="GPS">GPS</option>
 					   <option value="Military">Military</option>
 					   <option value="Research">Research</option>
-					   <option value="">None</option>
 					   </select></td>
                     </tr>
                 </table>

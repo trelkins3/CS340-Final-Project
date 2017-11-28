@@ -1,5 +1,7 @@
 <?php
 session_start();
+session_unset();
+session_destroy();
 ?>
 
 <!DOCTYPE html>
@@ -34,11 +36,8 @@ session_start();
     </header>
 
     <main>
-        <h2>You have successfully been logged out</h2>
-        <?php
-            session_unset();
-            session_destroy();
-        ?>
+        <p>You have successfully been logged out</p>
+
     </main>
     </body>
 </html>
