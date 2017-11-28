@@ -64,7 +64,7 @@ session_start();
 		
 		echo "</tr>\n";
 		while($row = mysqli_fetch_row($result)) {	
-			echo "<tr class='notFirst'>";	
+			echo "<tr class='not-first'>";	
 		
 			// $row is array... foreach( .. ) puts every element
 			// of $row to $cell variable	
@@ -84,7 +84,7 @@ session_start();
 	?>
 
     <main>
-    	
+
     </main>
 	
     </body>

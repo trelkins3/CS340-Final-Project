@@ -38,6 +38,15 @@ session_start();
 
         <div class="form-container">
             <form action="submitCredentials.php" method="post">
+                <p class="error-msg">
+                    <?php
+                        if(isset($_SESSION['errMsg'])){
+                            echo $_SESSION['errMsg'];
+                        }
+                    ?>
+                </p>
+                <?php unset($_SESSION['errMsg']); ?>
+                
                 <table>
                     <tr>
                         <td class="table-desc"><label for="userName">Username:</label></td>
@@ -54,7 +63,7 @@ session_start();
             </form>
         </div>
 
-        <p>Don't have an account? <a href="http://web.engr.oregonstate.edu/~elkinsd/CS340/SatelliteDB/signUp.php">Sign up!</a></p>
+        <p>Don't have an account? <a href="signUp.php">Sign up!</a></p>
     </main>
     </body>
 </html>

@@ -102,6 +102,10 @@ table {
 	border-left: none;
 }
 
-.notFirst:hover {
+.not-first:hover {
 	background-color: #b7aeae;
+}
+
+.error-msg {
+	color: red;
 }
