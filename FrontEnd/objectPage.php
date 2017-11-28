@@ -37,6 +37,7 @@ session_start();
 	<?php
 		include 'connectvarsEECS.php'; 
 		
+		// Fetch passed object name
 		$objectName = $_GET['param'];
 	
 		$conn = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
@@ -44,6 +45,7 @@ session_start();
 			die('Could not connect: ' . mysql_error());
 		}
 		
+		// Queries for satellite, launch, and purpose tables
 		$satQuery = "SELECT satID, COSPAR, ownerID, orbitalPeriod FROM Satellite
 					 WHERE satID='$objectName'";
 		$launchQuery = "SELECT launchDate, launchSite FROM Rocket WHERE launchID=
@@ -51,6 +53,7 @@ session_start();
 		$purposeQuery = "SELECT purpose1, purpose2 FROM Purpose WHERE
 						 satID='$objectName'";
 		
+		// Fetch everything
 		$satResult = mysqli_query($conn, $satQuery);
 		if(!satResult){ die("Query to fetch satellite failed."); }
 		
@@ -60,11 +63,12 @@ session_start();
 		$purposeResult = mysqli_query($conn, $purposeQuery);
 		if(!purposeResult){ die("Query to fetch purposes failed."); }
 		
+		// Cut into row object for individual item access
 		$satRow = mysqli_fetch_row($satResult);
 		$launchRow = mysqli_fetch_row($launchResult);
 		$purposeRow = mysqli_fetch_row($purposeResult);
 		
-		//echo "$objectName";		
+		// Print everything!	
 		echo "<br>Satellite Name: $satRow[0]<br><br>";
 		echo "COSPAR ID Number: $satRow[1]<br><br>";
 		echo "Launch Owner: $satRow[2]<br><br>";
@@ -74,4 +78,5 @@ session_start();
 		echo "Purposes: $purposeRow[0] $purposeRow[1] <br>";
 		
 		// Photo code goes here?
+		// echo "<img></img>";
 	?>

@@ -35,14 +35,35 @@ session_start();
     </header>
 	
 	<main>
+		<!-- Rewrite this at some point? Maybe add 'about' title -->
+		<!-- This should be aligned left with an image and Reddit feeds on the right -->
+		<p>Welcome to SatelliteDB! SatelliteDB is a project created
+		by Donald "Trey" Elkins and Adam Ruark with the goal of cataloguing various objects
+		in orbit around the earth. We wanted to provide an easy to use, visually inoffensive
+		web application that allows users to learn about or research satellites.<br><br>
+		
+		The satellite database page provides a list of all orbital objects contained within 
+		the SatelliteDB catalog. Clicking an object's name will redirect to a page containing
+		all of its recorded information. If you're logged in, objects can be favorited from
+		their specific page. Favorites can be accessed from the 'Favorites' tab after logging
+		in to SatelliteDB.<br><br>
+		
+		If you don't see an object that you'd like in the satellite datbase, use the 'add
+		satellite' page to submit it to the catalog! More information in the database means
+		a more useful system, so any additions are appreciated.<br><br>
+		
+		Enjoy!</p>
 		<?php
 			if(isset($_SESSION['status'])){
-				echo "You are logged in as ". $_SESSION['username'];
+				echo "<b>You are logged in as ". $_SESSION['username'] . ".</b>";
 			}
 			else {
-				echo "You are not logged in";
+				echo "<b>You are not logged in.</b>";
 			}
 		?>
+		<br><br><br>
+		<script src="https://www.reddit.com/r/space/.embed?limit=5&t=all" type="text/javascript">
+		</script>
     </main>
 	
     </body>
