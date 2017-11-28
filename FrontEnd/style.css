@@ -4,6 +4,10 @@ body {
 	font-family: 'Roboto', sans-serif;
 }
 
+a {
+	text-decoration: none;
+}
+
 main {
 	text-align: center;
 	margin: 7% 40% 0% 40%;

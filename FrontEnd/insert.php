@@ -1,5 +1,8 @@
-﻿<!DOCTYPE html>
-<!-- Insert into Student table CS 340 -->
+﻿<?php
+session_start();
+?>
+<!DOCTYPE html>
+
 <html>
 	<head>
 		<title>Form Submission</title>

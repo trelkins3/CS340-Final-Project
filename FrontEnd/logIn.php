@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -8,7 +12,7 @@
 
     <body>
     <header>
-        <h1><a>SatelliteDB   </a></h1>
+        <h1><a>SatelliteDB</a></h1>
 		<nav>
 			<ul class="navbar-list">
 				<li class="navbar-item"><a href="index.php">Home</a></li>
