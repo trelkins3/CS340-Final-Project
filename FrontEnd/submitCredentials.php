@@ -4,9 +4,8 @@
 		<title>Log in Status</title>
 		<link rel="stylesheet" href="style.css">
 	</head>
-
 <body>
-<h2>Log in Status</h2>
+<h2>Login Status</h2>
 <?php
 	include 'connectvarsEECS.php'; 
 	
@@ -23,20 +22,21 @@
 	$result = mysqli_query($conn, $query);
 	$row = mysqli_fetch_array($result, MYSQLI_ASSOC);
 	if(!$row){
-		die('Username not found');
+		die('Username not found. <a href="logIn.php"><br><br>Return to Login Page</a>');
 	}
 //Fetch the stored password and compare the entered password
 	$dbPassword = $row['Pass'];
 	$salt = $row['salt'];
 	$password = md5($password . $salt);
 
+
 	if($dbPassword == $password){
 		echo "Success";
 	}
 	else{
-		die('Incorrect Password');
+		die('Incorrect Password. <a href="logIn.php"><br><br>Return to Login Page</a>');
 	}
-		
+	
 	mysqli_free_result($result);
 	mysqli_close($conn);	
 ?>

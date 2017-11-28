@@ -63,6 +63,7 @@
 		echo "ERROR: Could not execute query. " . mysqli_error($conn);
 	}
 	
+	echo "<a href='satelliteDB.php'><br><br>Return to DB Page</a>";
 	mysqli_close($conn);
 ?>
 	

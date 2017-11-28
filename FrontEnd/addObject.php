@@ -34,11 +34,23 @@
                         <td><label for="COSPAR">COSPAR ID:</label></td>
                         <td><input type="text" name="COSPAR" id="COSPAR"></td>
                     </tr>
+					<tr>
+                       <td><label for="owner">Launch Owner:</label></td>
+                       <td><select name="owner" id="owner">
+					   <option value="CNSA">CNSA</option>
+					   <option value="ESA">ESA</option>
+					   <option value="Iridium Communications">Iridium Communications</option>
+					   <option value="NASA">NASA</option>
+					   <option value="Roscosmos">Roscosmos</option>
+					   <option value="SpaceX">SpaceX</option>
+					   </select></td>
+                    </tr>
 					<!-- Needs to be dropdown menu -->
+					<!--
                 	<tr>
                        <td><label for="owner">Owner:</label></td>
                        <td><input type="text" name="owner" id="owner"></td>
-                    </tr>
+                    </tr>-->
 					<!-- This needs to be removed and replaced with conditional logic that
 					just assigns a new ID as necessary if the launch date and site aren't
 					the same as an existing launch -->
@@ -61,11 +73,23 @@
 					<!-- Needs to be dropdown menu -->
 					<tr>
                         <td><label for="purpose1">Purpose 1:</label></td>
-                        <td><input type="text" name="purpose1" id="purpose1"></td>
+                       <td><select name="purpose1" id="purpose1">
+					   <option value="Communications">Communications</option>
+					   <option value="GPS">GPS</option>
+					   <option value="Military">Military</option>
+					   <option value="Research">Research</option>
+					   <option value="">None</option>
+					   </select></td>
                     </tr>
 					<tr>
                         <td><label for="purpose2">Purpose 2:</label></td>
-                        <td><input type="text" name="purpose2" id="purpose2"></td>
+                       <td><select name="purpose2" id="purpose2">
+					   <option value="Communications">Communications</option>
+					   <option value="GPS">GPS</option>
+					   <option value="Military">Military</option>
+					   <option value="Research">Research</option>
+					   <option value="">None</option>
+					   </select></td>
                     </tr>
                 </table>
                 <input type="submit" value="Submit">
