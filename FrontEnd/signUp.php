@@ -39,6 +39,14 @@ session_start();
 
         <div class="form-container">
             <form action="insert.php" method="post">
+                <p class="error-msg">
+                    <?php
+                        if(isset($_SESSION['errMsg'])){
+                            echo $_SESSION['errMsg'];
+                        }
+                    ?>
+                </p>
+                <?php unset($_SESSION['errMsg']); ?>
                 <table>
                     <tr>
                         <td><label for="userName">Username:</label></td>

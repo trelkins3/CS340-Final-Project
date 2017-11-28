@@ -67,9 +67,7 @@ session_start();
 		echo "ERROR: Could not execute query. " . mysqli_error($conn);
 	}
 	
-	
-	echo "<script>window.location.replace(\"satelliteDB.php\")</script>"; 
-    	
+	echo "<script>window.location.replace(\"satelliteDB.php\")</script>"; 	
 	mysqli_close($conn);
 ?>
 	
