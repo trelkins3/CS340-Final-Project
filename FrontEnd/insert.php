@@ -44,6 +44,7 @@ if (mysqli_query($conn, $query)){
 	mysqli_close($conn);
 	$_SESSION['status'] = 'in';
 	$_SESSION['username'] = $userName;
+	$_SESSION['name'] = $name;
 	echo "<script>window.location.replace(\"index.php\")</script>";	
 	exit();
 } 

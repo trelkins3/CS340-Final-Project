@@ -31,6 +31,7 @@ mysqli_close($conn);
 if($dbPassword == $password){
 	$_SESSION['status'] = 'in';
 	$_SESSION['username'] = $userName;
+	$_SESSION['name'] = $row['Name'];
 	header("Location: index.php");
 	exit();
 }
