@@ -83,7 +83,6 @@ table {
 	width: 100%;
 	text-align: left;
 	padding: 5px 0 15px 0;
-	box-shadow: 0px 0px 10px #929292;
 }
 
 .table-desc {
@@ -91,13 +90,14 @@ table {
 	text-align: right;
 }
 
-.t01{
+.t01 {
 	border: 1px solid black;
 	border-collapse: collapse;
 	text-align: center;
 	background-color: #e0dede;
 	width: 50%;
 	margin: auto;
+	box-shadow: 0px 0px 10px #929292;
 }
 
 .t01 th {

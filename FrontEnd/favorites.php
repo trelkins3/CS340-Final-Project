@@ -27,8 +27,13 @@ session_start();
 		
 		$User = $_SESSION['username'];
 		// This needs to be dynamic - but how? $_Session['username']?
-		$query = "SELECT * FROM Satellite WHERE satID=
-		(SELECT satID FROM Favorites WHERE Username='$User')";
+		$query = "SELECT satID as 'Satellite Name', 
+						COSPAR as 'COSPAR ID',
+						ownerID as 'Owner', 
+						launchID as 'Launch ID', 
+						orbitalPeriod as 'Orbital Period' 
+					FROM Satellite 
+					WHERE satID=(SELECT satID FROM Favorites WHERE Username='$User')";
 		
 		$result = mysqli_query($conn, $query);
 		if (!$result) {
