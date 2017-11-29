@@ -11,12 +11,12 @@ session_start();
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
 	</head>
 
+
     <body>
-	
 	<?php
 		include 'header.php';
 	?>
-	
+	<main>
 	<?php
 		include 'connectvarsEECS.php'; 
 	
@@ -35,7 +35,7 @@ session_start();
 		
 		// get number of columns in table	
 		$fields_num = (mysqli_num_fields($result));
-		echo "<h1>$table</h1>";
+		echo "<h1>Satellites</h1>";
 		echo '<table class="t01"><tr>';
 		
 		for($i=0; $i<$fields_num; $i++) {	
@@ -46,8 +46,8 @@ session_start();
 		echo "</tr>\n";
 		while($row = mysqli_fetch_row($result)) {
 			$parameter = $row[0];
-			echo "<tr class='not-first'>";	
-		
+			echo "<tr class='not-first' onclick=\"location.href='objectPage.php?param=$parameter'\">";	
+
 			// $row is array... foreach( .. ) puts every element
 			// of $row to $cell variable	
 		
@@ -55,22 +55,20 @@ session_start();
 		
 			foreach($row as $cell){
 				if($count == 0)
-					break;
-				if($cell == $row[0])
-					echo "<td><a href=\"objectPage.php?param=$parameter\">$cell</a></td>";	
+					break;	
 				else
 					echo "<td>$cell</td>";
 				$count--;
 		}
-		echo "</tr>\n";
+		echo "</tr></a>\n";
 		}
 		
 		echo '</table>';
 	?>
 
-    <main>
-
+    
     </main>
-	
     </body>
+
+    
 </html>

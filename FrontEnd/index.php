@@ -19,11 +19,11 @@ session_start();
 	<main>
 		<!-- Rewrite this at some point? Maybe add 'about' title -->
 		<!-- This should be aligned left with an image and Reddit feeds on the right -->
-		<h2>Welcome to SatelliteDB!</h2>
+		<h2 style="text-align: center">Welcome to SatelliteDB!</h2>
 		<div class="col-left">
 			<p> SatelliteDB is a project created
 			by Donald "Trey" Elkins and Adam Ruark with the goal of cataloguing various objects
-			in orbit around the earth. We wanted to provide an easy to use, visually inoffensive
+			in orbit around the earth. We wanted to provide an easy to use, visually clean
 			web application that allows users to learn about or research satellites.<br><br>
 			
 			The satellite database page provides a list of all orbital objects contained within 
@@ -41,7 +41,7 @@ session_start();
 
 		<br><br><br>
 		<div class="col-right">
-			<script src="https://www.reddit.com/r/space/.embed?limit=5&t=all" type="text/javascript">
+			<script src="https://www.reddit.com/r/space/.embed?limit=8&t=all" type="text/javascript">
 			</script>
 		</div>
 		
