@@ -17,6 +17,7 @@ session_start();
 		include 'header.php';
 	?>
 	<main>
+	<h1>Satellites</h1>
 	<?php
 		include 'connectvarsEECS.php'; 
 	
@@ -35,7 +36,6 @@ session_start();
 		
 		// get number of columns in table	
 		$fields_num = (mysqli_num_fields($result));
-		echo "<h1>Satellites</h1>";
 		echo '<table class="t01"><tr>';
 		
 		for($i=0; $i<$fields_num; $i++) {	
@@ -62,7 +62,6 @@ session_start();
 		}
 		echo "</tr></a>\n";
 		}
-		
 		echo '</table>';
 	?>
 
