@@ -97,6 +97,10 @@ session_start();
 					   <option value="Research">Research</option>
 					   </select></td>
                     </tr>
+                    <tr>
+                        <td><label for="image">Image URL</label></td>
+                        <td><input type="text" name="image" id="image"></td>
+                    </tr>
                 </table>
                 <input type="submit" value="Submit">
 

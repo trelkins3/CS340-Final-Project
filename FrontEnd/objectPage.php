@@ -39,7 +39,7 @@ session_start();
 						(SELECT launchID FROM Satellite WHERE satID='$objectName')";
 		$purposeQuery = "SELECT purpose1, purpose2 FROM Purpose WHERE
 						 satID='$objectName'";
-		$imageQuery = "SELECT url FROM Images WHERE satID=$objectName";
+		$imageQuery = "SELECT url FROM Images WHERE satID='$objectName'";
 		
 		// Fetch everything
 		$satResult = mysqli_query($conn, $satQuery);
