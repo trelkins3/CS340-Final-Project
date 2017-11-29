@@ -9,7 +9,11 @@ a {
 }
 
 main {
-	margin: 5% 15% 0 15%;
+	padding-top: 5%;
+}
+
+.front-page {
+	margin: 0 15% 0 15%;
 }
 
 header {
@@ -118,8 +122,8 @@ table {
 	border-collapse: collapse;
 	text-align: left;
 	background-color: #e0dede;
-	width: 70%;
-	margin: auto;
+	width: 100%;
+	/*margin: auto;*/
 	box-shadow: 0px 0px 10px #929292;
 }
 
@@ -162,6 +166,11 @@ table {
 	display: inline-block;
 	float: left;
 	width: 40%;
+}
+
+.favorites-button {
+	padding: 30px;
+	text-align: center;
 }
 
 img {

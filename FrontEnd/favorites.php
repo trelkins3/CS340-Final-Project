@@ -11,12 +11,12 @@ session_start();
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
 	</head>
 
-    <body>
-	
 	<?php
 		include 'header.php';
 	?>
-	
+    <body>
+    	<main>
+    		<h1>Favorites</h1>
 	<?php
 		include 'connectvarsEECS.php'; 
 		
@@ -25,8 +25,8 @@ session_start();
 			die('Could not connect: ' . mysql_error());
 		}
 		
+		//Query
 		$User = $_SESSION['username'];
-		// This needs to be dynamic - but how? $_Session['username']?
 		$query = "SELECT satID as 'Satellite Name', 
 						COSPAR as 'COSPAR ID',
 						ownerID as 'Owner', 
@@ -70,10 +70,6 @@ session_start();
 		
 		echo '</table>';
 	?>
-
-    <main>
-
     </main>
-	
     </body>
 </html>

@@ -20,7 +20,7 @@ session_destroy();
         include 'header.php';
     ?>
 
-    <main>
+    <main style="text-align: center;">
         <p>You have successfully been logged out</p>
         <a href="index.php">Return Home</a>
 

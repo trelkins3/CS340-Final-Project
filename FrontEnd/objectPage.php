@@ -16,7 +16,7 @@ session_start();
 	<?php
 		include 'header.php';
 	?>
-	<main>
+	<main class="front-page">
 	
 	<?php
 		include 'connectvarsEECS.php'; 
@@ -62,13 +62,13 @@ session_start();
 		
 		// Print out table
 		echo "<div class=\"col-left\"><table class=\"t02\">";	
-		echo "<tr><td>Satellite Name:</td><td> $satRow[0]</td></tr>";
-		echo "<tr><td>COSPAR ID Number:</td><td> $satRow[1]</td></tr>";
-		echo "<tr><td>Launch Owner:</td><td> $satRow[2]</td></tr>";
-		echo "<tr><td>Launch Date:</td><td> $launchRow[0]</td></tr>";
-		echo "<tr><td>Launch Site:</td><td> $launchRow[1]</td></tr>";
-		echo "<tr><td>Orbital Period:</td><td> $satRow[3] Hours</td></tr>";
-		echo "<tr><td>Purposes:</td><td>";
+		echo "<tr><td>Satellite Name</td><td> $satRow[0]</td></tr>";
+		echo "<tr><td>COSPAR ID Number</td><td> $satRow[1]</td></tr>";
+		echo "<tr><td>Launch Owner</td><td> $satRow[2]</td></tr>";
+		echo "<tr><td>Launch Date</td><td> $launchRow[0]</td></tr>";
+		echo "<tr><td>Launch Site</td><td> $launchRow[1]</td></tr>";
+		echo "<tr><td>Orbital Period</td><td> $satRow[3] Hours</td></tr>";
+		echo "<tr><td>Purpose</td><td>";
 		if($purposeRow[0] == NULL){
 			echo "None";
 		}
@@ -78,7 +78,12 @@ session_start();
 		else {
 			echo "$purposeRow[0] and $purposeRow[1]";
 		}
-		echo "</td></tr></table></div>";
+		echo "</td></tr></table>";
+
+		//Favorites button
+		echo "<div class=\"favorites-button\"><form action=\"addFavorites.php\">";
+		echo "<input type=\"submit\" value=\"Add to Favorites\"/>";
+		echo "</div></form></div>";
 		
 		// Photo code goes here?
 		echo "<div class=\"col-right\">";

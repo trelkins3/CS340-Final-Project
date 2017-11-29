@@ -16,7 +16,7 @@ session_start();
 		include 'header.php';
 	?>
 	
-	<main>
+	<main class="front-page">
 		<!-- Rewrite this at some point? Maybe add 'about' title -->
 		<!-- This should be aligned left with an image and Reddit feeds on the right -->
 		<h1 class="page-title">Welcome to SatelliteDB</h1>
