@@ -1,4 +1,4 @@
- <?php
+<?php
 session_start();
 ?>
 
@@ -13,32 +13,19 @@ session_start();
 
     <body>
 	
-	<header>
-        <h1><a>SatelliteDB</a></h1>
-		<nav>
-            <ul class="navbar-list">
-                <li class="navbar-item"><a href="index.php">Home</a></li>
-                <li class="navbar-item"><a href="satelliteDB.php">Satellite Database</a></li>
-                <li class="navbar-item"><a href="addObject.php">Add Satellite</a></li>
-                <?php
-                    if(isset($_SESSION['status'])){
-                        echo "<li class=\"navbar-item\"><a href=\"favorites.php\">Favorites</a></li>";
-                        echo "<li class=\"navbar-item navbar-right\"><a href=\"logOut.php\">Log Out</a></li>";
-                    }
-                    else {
-                        echo "<li class=\"navbar-item navbar-right\"><a href=\"logIn.php\">Log In</a></li>";
-                        echo "<li class=\"navbar-item navbar-right\"><a href=\"signUp.php\">Sign Up</a></li>";
-                    }
-                ?>
-            </ul>
-        </nav>
-    </header>
+	<?php
+		include 'header.php';
+	?>
+	<main>
 	
 	<?php
 		include 'connectvarsEECS.php'; 
 		
 		// Fetch passed object name
 		$objectName = $_GET['param'];
+
+		//print page title
+		echo "<h1 class=\"page-title\">Satellite: $objectName</h1>";
 	
 		$conn = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 		if (!$conn) {
@@ -52,6 +39,7 @@ session_start();
 						(SELECT launchID FROM Satellite WHERE satID='$objectName')";
 		$purposeQuery = "SELECT purpose1, purpose2 FROM Purpose WHERE
 						 satID='$objectName'";
+		$imageQuery = "SELECT url FROM Images WHERE satID=$objectName";
 		
 		// Fetch everything
 		$satResult = mysqli_query($conn, $satQuery);
@@ -62,21 +50,44 @@ session_start();
 		
 		$purposeResult = mysqli_query($conn, $purposeQuery);
 		if(!purposeResult){ die("Query to fetch purposes failed."); }
+
+		$imageResult = mysqli_query($conn, $imageQuery);
+		if(!imageQuery){ die("Query to fetch image failed."); }
 		
 		// Cut into row object for individual item access
 		$satRow = mysqli_fetch_row($satResult);
 		$launchRow = mysqli_fetch_row($launchResult);
 		$purposeRow = mysqli_fetch_row($purposeResult);
+		$image = mysqli_fetch_row($imageResult);
 		
-		// Print everything!	
-		echo "<br>Satellite Name: $satRow[0]<br><br>";
-		echo "COSPAR ID Number: $satRow[1]<br><br>";
-		echo "Launch Owner: $satRow[2]<br><br>";
-		echo "Launch Date: $launchRow[0]<br><br>";
-		echo "Launch Site: $launchRow[1]<br><br>";
-		echo "Orbital Period: $satRow[3] Hours<br><br>";
-		echo "Purposes: $purposeRow[0] $purposeRow[1] <br>";
+		// Print out table
+		echo "<div class=\"col-left\"><table class=\"t02\">";	
+		echo "<tr><td>Satellite Name:</td><td> $satRow[0]</td></tr>";
+		echo "<tr><td>COSPAR ID Number:</td><td> $satRow[1]</td></tr>";
+		echo "<tr><td>Launch Owner:</td><td> $satRow[2]</td></tr>";
+		echo "<tr><td>Launch Date:</td><td> $launchRow[0]</td></tr>";
+		echo "<tr><td>Launch Site:</td><td> $launchRow[1]</td></tr>";
+		echo "<tr><td>Orbital Period:</td><td> $satRow[3] Hours</td></tr>";
+		echo "<tr><td>Purposes:</td><td>";
+		if($purposeRow[0] == NULL){
+			echo "None";
+		}
+		else if($purposeRow[1] == NULL){
+			echo "$purposeRow[0]";
+		}
+		else {
+			echo "$purposeRow[0] and $purposeRow[1]";
+		}
+		echo "</td></tr></table></div>";
 		
 		// Photo code goes here?
-		// echo "<img></img>";
+		echo "<div class=\"col-right\">";
+		echo "<a href=\"$image[0]\"><img src=\"$image[0]\"></img></a>";
+		echo "</div>";
+
+		mysqli_close($conn);
 	?>
+
+	</main>
+	</body>
+</html>

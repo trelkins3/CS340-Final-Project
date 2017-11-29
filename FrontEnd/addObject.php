@@ -92,7 +92,7 @@ session_start();
                        <td><select name="purpose2" id="purpose2">
 					   <option value="">None</option>
 					   <option value="Communications">Communications</option>
-					   <option value="GPS">GPS</option>
+					   <option value="GPS">GPS/GLONASS</option>
 					   <option value="Military">Military</option>
 					   <option value="Research">Research</option>
 					   </select></td>

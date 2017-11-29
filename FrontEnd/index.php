@@ -19,7 +19,7 @@ session_start();
 	<main>
 		<!-- Rewrite this at some point? Maybe add 'about' title -->
 		<!-- This should be aligned left with an image and Reddit feeds on the right -->
-		<h1 class="page-title">Welcome to SatelliteDB!</h1>
+		<h1 class="page-title">Welcome to SatelliteDB</h1>
 		<div class="col-left">
 			<p> SatelliteDB is a project created
 			by Donald "Trey" Elkins and Adam Ruark with the goal of cataloguing various objects

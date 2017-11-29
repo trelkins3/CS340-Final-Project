@@ -64,6 +64,8 @@ session_start();
 		echo "</tr></a>\n";
 		}
 		echo '</table>';
+		mysqli_close($conn);
+
 	?>
 
     
