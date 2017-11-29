@@ -53,3 +53,14 @@ INSERT INTO `Favorites` (`Username`, `satID`) VALUES
 ('trelkins3', 'Iridium-39'),
 ('trelkins3', 'QUESS');
 
+-- Images
+INSERT INTO `Images` (`satID`, `url`, `Moderated`) VALUES
+('CASSIOPE', 'https://img.purch.com/h/1000/aHR0cDovL3d3dy5zcGFjZS5jb20vaW1hZ2VzL2kvMDAwLzAzMy8xNTkvb3JpZ2luYWwvQ2Fzc2lvcGVfZnVsbC5qcGc=', 1),
+('CUSAT', 'https://www.google.com/search?q=Cornell+University+Satellite&source=lnms&tbm=isch&sa=X&ved=0ahUKEwiCkNON3-TXAhUB9WMKHTqqCaAQ_AUIDCgD&biw=1920&bih=949#imgrc=yZvZaekET8a3MM:', 1),
+('Death Star', 'http://starwarsblog.starwars.com/wp-content/uploads/sites/6/2015/12/BadFeeling-Episode-IV-Death-Star.jpg', 1),
+('Death Star 2', 'https://lumiere-a.akamaihd.net/v1/images/Death-Star-II_b5760154.jpeg?region=0%2C68%2C2160%2C1080', 1),
+('Iridium-39', 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Iridium_satellite.jpg/1200px-Iridium_satellite.jpg', 1),
+('PROBA2', 'http://www.esa.int/var/esa/storage/images/esa_multimedia/images/2009/05/proba-22/9899131-2-eng-GB/Proba-2_large.jpg', 1),
+('SMOS', 'http://www.dlr.de/en/Portaldata/1/Resources/portal_news/newsarchiv2009_5/SMOS_hires.jpg', 1),
+('USA-192', 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/GPS-IIRM.jpg/1200px-GPS-IIRM.jpg', 1);
+

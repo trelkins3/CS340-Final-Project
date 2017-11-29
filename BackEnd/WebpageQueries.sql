@@ -22,12 +22,12 @@ SELECT * FROM Owner;
 SELECT S.satID, COSPAR, orbitalPeriod, 
 	R.launchID, launchDate, launchSite, 
 	O.ownerID, ownerType, Location, Country,
-	P.satID, purpose1, purpose2, purpose3
+	P.satID, purpose1, purpose2
 FROM Satellite S, Rocket R, Owner O, Purpose P
 WHERE S.satID='$userInput' AND S.satID=P.satID AND S.ownerID=O.ownerID AND S.launchID=R.launchID;
 
 --Add object. Requires user input
 --If owner already exists, then we won't need to insert a new owner. Check this with php.
 INSERT INTO Satellite VALUES '$satID', '$COSPAR', '$ownerID', '$launchID', '$orbitalPeriod';
-INSERT INTO Purpose VALUES '$satID', '$purpose1', '$purpose2', '$purpose3';
+INSERT INTO Purpose VALUES '$satID', '$purpose1', '$purpose2';
 INSERT INTO Owner VALUES '$ownerID', '$ownerType', '$Location', '$Country';

@@ -36,16 +36,23 @@ CREATE TABLE Satellite
  ON DELETE CASCADE
 );
 
--- Must be fetched via SELECT queries/PHP
--- Need a trigger to update?? Or is it already implemented
+-- Updated via separate queries in PHP
 CREATE TABLE Purpose
 (satID				VARCHAR(20)		NOT NULL UNIQUE,
  purpose1			VARCHAR(20)		DEFAULT NULL,
  purpose2			VARCHAR(20)		DEFAULT NULL,
- purpose3			VARCHAR(20)		DEFAULT NULL,
  PRIMARY KEY(satID),
  FOREIGN KEY(satID) REFERENCES Satellite(satID)
  ON UPDATE CASCADE
+);
+
+-- Images table, allows moderation (set 'Moderated' to 1 in phpMyAdmin
+CREATE TABLE Images
+(satID				VARCHAR(20)		NOT NULL,
+ url				VARCHAR(300)	DEFAULT NULL,
+ Moderated			tinyint(1)		NOT NULL DEFAULT '0',
+ PRIMARY KEY(satID),
+ FOREIGN KEY(satID) REFERENCES Satellite(satID)
 );
 
 -- Only allowed to have one favorite?

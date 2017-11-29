@@ -17,6 +17,6 @@ INSERT INTO Favorites VALUES
 ('testuser', 'CubeSat001');
 
 -- Removed 'Launches' table from DB
-DROP TABLE Favorites, Purpose, Satellite, Owner, Rocket, DBUsers;
+DROP TABLE Favorites, Purpose, Satellite, Owner, Rocket, DBUsers, Images;
 
 -- Purpose table is handled by PHP
