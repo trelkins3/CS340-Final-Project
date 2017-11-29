@@ -17,7 +17,7 @@ session_start();
 		include 'header.php';
 	?>
 	<main>
-	<h1>Satellites</h1>
+	<h1 class="page-title">Satellites</h1>
 	<?php
 		include 'connectvarsEECS.php'; 
 	
@@ -38,6 +38,7 @@ session_start();
 		$fields_num = (mysqli_num_fields($result));
 		echo '<table class="t01"><tr>';
 		
+		// table headers
 		for($i=0; $i<$fields_num; $i++) {	
 			$field = mysqli_fetch_field($result);
 			echo "<th><b>$field->name</b></th>";

@@ -9,7 +9,7 @@ a {
 }
 
 main {
-	margin: 5%;
+	margin: 5% 10% 0 10%;
 }
 
 header {
@@ -100,14 +100,20 @@ table {
 }
 
 .t01 th {
-	text-decoration: underline;
 	border: none;
+	background-color: #52a5e6;
+	color: white;
+	padding: 5px;
 }
 
 .t01 td {
 	border: 1px solid black;
 	border-right: none;
 	border-left: none;
+}
+
+.page-title {
+	padding-bottom: 50px;
 }
 
 .not-first {
@@ -130,6 +136,7 @@ table {
 }
 
 .col-left {
+	/*padding-left: 100px;*/
 	text-align: left;
 	display: inline-block;
 	float: left;
