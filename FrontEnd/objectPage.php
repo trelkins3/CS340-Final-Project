@@ -105,7 +105,12 @@ session_start();
 		
 		// Photo code goes here?
 		echo "<div class=\"col-right\">";
-		echo "<a href=\"$image[0]\"><img src=\"$image[0]\"></img></a>";
+		if($image[0] == null){
+			echo "<div class=\"no-photo\">No Photo Available</div>";
+		}
+		else {
+			echo "<a href=\"$image[0]\"><img src=\"$image[0]\"></img></a>";
+		}
 		echo "</div>";
 
 		mysqli_close($conn);

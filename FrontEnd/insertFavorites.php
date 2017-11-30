@@ -41,7 +41,7 @@ session_start();
 			exit();
 		}
 		else {
-			echo "<br><br>Failed to add objects to favorite - you need to log in!";
+			echo "<div style=\"text-align: center;\"><br><br>Failed to add objects to favorites - you need to log in!</div>";
 		}
 	?>
 	</main>
