@@ -16,6 +16,7 @@ $query = "INSERT INTO Favorites VALUES ('$username', '$satID')";
 
 //perform insertion
 $result = mysqli_query($conn, $query);
+mysqli_close($conn);
 
 //on success, reload page
 if($result){
@@ -25,11 +26,6 @@ if($result){
 else {
 	echo "FAILED";
 }
-
-
-// echo "$query";
-
-
 ?>
 
     

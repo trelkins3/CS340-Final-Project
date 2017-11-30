@@ -27,17 +27,17 @@ session_start();
 		
 		//Query
 		$User = $_SESSION['username'];
-		$query = "SELECT satID as 'Satellite Name', 
-						COSPAR as 'COSPAR ID',
-						ownerID as 'Owner', 
-						launchID as 'Launch ID', 
-						orbitalPeriod as 'Orbital Period' 
-					FROM Satellite 
-					WHERE satID=(SELECT satID FROM Favorites WHERE Username='$User')";
+		$query = "SELECT S.satID as 'Satellite Name', 
+					S.COSPAR as 'COSPAR ID', 
+					S.ownerID as 'Owner', 
+					S.launchID as 'Launch ID', 
+					S.orbitalPeriod as 'Orbital Period'
+				FROM Satellite S, DBUsers D, Favorites F 
+				WHERE S.satID=F.satID AND F.Username=D.Username AND F.Username='$User'";
 		
 		$result = mysqli_query($conn, $query);
 		if (!$result) {
-			die("Query to show fields from table failed");
+			die("Query to show fields from table failed $query");
 		}
 		
 		// get number of columns in table	
