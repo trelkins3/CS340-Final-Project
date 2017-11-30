@@ -80,7 +80,6 @@ session_start();
 		}
 		echo "</td></tr></table>";
 
-
 		//determine action of Favorites button and get values
 		$User = $_SESSION['username'];
 		$verifyQuery = "SELECT COUNT(*) FROM Favorites WHERE satID='$objectName' AND Username='$User'";
