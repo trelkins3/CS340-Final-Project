@@ -45,10 +45,6 @@ $purpose1 = $fields['purpose1'];
 $purpose2 = $fields['purpose2'];
 $image = $fields['image'];
 
-//TODO: some constraint checking
-//Worst case scenario we BS our way through the presentation
-
-
 // Insertion queries
 $launchQuery = "INSERT INTO Rocket (launchID, launchDate, launchSite) VALUES
 				('$launchID', '$launchDate', '$launchSite')";
@@ -70,7 +66,7 @@ if ($results1 && $results2 && $results3 && $results4){
 	exit();	
 }
 else{
-	$_SESSION['errMsg'] = "Unable to add entry";
+	$_SESSION['errMsg'] = "Error: Unable to add entry. Try again.";
 	echo "<script>window.location.replace(\"addObject.php\")</script>";
 	exit();
 }
