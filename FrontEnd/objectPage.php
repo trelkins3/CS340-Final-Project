@@ -81,7 +81,8 @@ session_start();
 		echo "</td></tr></table>";
 
 		//Favorites button
-		echo "<div class=\"favorites-button\"><form action=\"addFavorites.php\">";
+		echo "<div class=\"favorites-button\"><form action=\"insertFavorites.php\" method=\"post\">";
+		echo "<input type=\"hidden\" name=\"satID\" value=\"$objectName\">";
 		echo "<input type=\"submit\" value=\"Add to Favorites\"/>";
 		echo "</div></form></div>";
 		
