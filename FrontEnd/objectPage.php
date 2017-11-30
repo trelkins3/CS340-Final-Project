@@ -80,10 +80,28 @@ session_start();
 		}
 		echo "</td></tr></table>";
 
+
+		//determine action of Favorites button and get values
+		$User = $_SESSION['username'];
+		$verifyQuery = "SELECT COUNT(*) FROM Favorites WHERE satID='$objectName' AND Username='$User'";
+		$verifyResult = mysqli_query($conn, $verifyQuery);
+		if(!satResult){ die("Query to fetch current favorites failed."); }
+		$verifyRow = mysqli_fetch_row($verifyResult);
+
+		//set values based on previous results
+		if($verifyRow[0] == 0){
+			$page = "insertFavorites.php";
+			$text = "Add to Favorites";
+		}
+		else {
+			$page = "deleteFavorites.php";
+			$text = "Remove From Favorites";
+		}
+
 		//Favorites button
-		echo "<div class=\"favorites-button\"><form action=\"insertFavorites.php\" method=\"post\">";
+		echo "<div class=\"favorites-button\"><form action=\"$page\" method=\"post\">";
 		echo "<input type=\"hidden\" name=\"satID\" value=\"$objectName\">";
-		echo "<input type=\"submit\" value=\"Add to Favorites\"/>";
+		echo "<input type=\"submit\" value=\"$text\"/>";
 		echo "</div></form></div>";
 		
 		// Photo code goes here?

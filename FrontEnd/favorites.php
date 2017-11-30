@@ -50,9 +50,12 @@ session_start();
 			echo "<th><b>$field->name</b></th>";
 		}
 		
+
+
 		echo "</tr>\n";
-		while($row = mysqli_fetch_row($result)) {	
-			echo "<tr class='not-first'>";	
+		while($row = mysqli_fetch_row($result)) {
+			$parameter = $row[0];	
+			echo "<tr class='not-first' onclick=\"location.href='objectPage.php?param=$parameter'\">";	
 		
 			// $row is array... foreach( .. ) puts every element
 			// of $row to $cell variable	
