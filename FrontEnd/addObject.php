@@ -18,7 +18,6 @@ session_start();
     <main>
         <h1>Add Satellite</h1>
         <div class="form-background">
-		
 
 		<!-- A lot of these need to be modified to be dropdown menus -->
 		<div class="form-container">
@@ -105,8 +104,10 @@ session_start();
                 </table>
                 <input type="submit" value="Submit">
 
+				<p>Note: Images require moderation prior to being displayed on object pages.</p>
 				</form>
         </div>
+		<br><br>
     </div>
     </main>
 	

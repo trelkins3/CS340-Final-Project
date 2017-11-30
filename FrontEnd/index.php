@@ -36,12 +36,14 @@ session_start();
 			satellite' page to submit it to the catalog! More information in the database means
 			a more useful system, so any additions are appreciated.<br><br>
 			
-			Enjoy!</p>
+			Enjoy!
+			</p>
+			<img src="http://www.esa.int/var/esa/storage/images/esa_multimedia/images/2015/05/iss_seen_from_sts-132/15404398-1-eng-GB/ISS_seen_from_STS-132.jpg">
 		</div>
 
 		<div class="col-right">
 			<script src="https://www.reddit.com/r/space/.embed?limit=8&t=all" type="text/javascript">
-			</script>
+			</script><br><br>
 		</div>
 		
     </main>
